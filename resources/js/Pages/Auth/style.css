@@ -1,0 +1,40 @@
+.bg-animation {
+    position: absolute;
+    inset: 0;
+    right: 0;
+    background-image: url("@/Images/Kampus.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-name: slide;
+    animation-duration: 25s;
+    animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation-iteration-count: infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    25% {
+      transform: translateX(-25%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    75% {
+      transform: translateX(-25%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  /* Media Query for small screens */
+  @media (max-width: 640px) {
+    .bg-animation {
+      display: none;
+    }
+  }
+  

@@ -4,6 +4,7 @@ import Logo from "@/Images/talent.png";
 import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
 import { Link } from "react-router-dom";
 import {  motion } from "framer-motion";
+import Navbar from "@/Components/Navbar";
 
 const Talent = () => {
     const cardData = [
@@ -43,6 +44,7 @@ const Talent = () => {
       }
   return (
     <BrowserRouter basename="/">
+      <Navbar />
       <section className="section relative flex p-1  h-full" >
       <motion.div
        initial={{ opacity: 0, y: -100 }}

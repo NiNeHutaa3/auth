@@ -4,6 +4,7 @@ import Logo from "@/Images/640px-Logo_Politeknik_Negeri_Batam.png";
 import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from 'react-router-dom';
+import Navbar from "@/Components/Navbar";
 // ...
 
 function Vacancy() {
@@ -120,6 +121,7 @@ function Vacancy() {
 
     return (
       <BrowserRouter basename="/">
+        <Navbar />
         <section className="section absolute flex h-full">
           <div className="w-1/3 ">
             <motion.div

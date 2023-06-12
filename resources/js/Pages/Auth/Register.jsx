@@ -2,12 +2,20 @@ import React, { useEffect } from "react";
 import { Head, Link, useForm } from "@inertiajs/react";
 import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
-import Poltek from "@/Images/640px-Logo_Politeknik_Negeri_Batam.png";
+import Poltek from "@/Images/rename.png";
 import PrimaryButton from "@/Components/PrimaryButton";
-import Kampus from "@/Images/Kampus.jpg";
 import TextInput from "@/Components/TextInput";
+import "@/Pages/Auth/style.css"
+import { motion } from 'framer-motion';
+
+
 
 export default function Register() {
+    const transition = {
+        duration: 0.8,
+        ease: [0.43, 0.13, 0.23, 0.96],
+        };
+
     const { data, setData, post, processing, errors, reset } = useForm({
         nim: "",
         name: "",
@@ -30,26 +38,30 @@ export default function Register() {
     };
 
     return (
-        <div
-            className="flex items-center justify-center h-screen bg-slate-300"
-            // style={{
-            //     backgroundImage: `url(${Kampus})`,
-            //     backgroundSize: "cover",
-            //     backgroundPosition: "center",
-            //     backgroundRepeat: "no-repeat",
-            // }}
-        >
-            <Head title="Register" />
-            <div className="max-w-md w-full mx-auto p-8 bg-white dark:bg-boxdark rounded-md shadow-default border border-stroke dark:border-strokedark">
+       <div className="flex items-center justify-center h-screen">
+            <motion.div className="bg-animation"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={transition}></motion.div>
+                <motion.div className="absolute inset-y-0 lg:right-0 w-full lg:w-2/4 sm:w-full bg-blue-100"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 2 }}
+                transition={transition}>
+            <div className="max-w-md w-full  mt-10 lg:mr-20 mr-7 mx-auto p-7 bg-white dark:bg-boxdark rounded-md shadow-default border border-stroke dark:border-strokedark rounded-[25px]">
+                <Head title="Register" />
                 <form onSubmit={submit}>
+                <div className="flex justify-center mb-2 ">
+                    <div className="h-16 w-20   flex items-center justify-center">
+                        <img src={Poltek} className="h-20 w-20 rounded-t-[10px] p-1 " alt="Logo" />
+                    </div>
+                </div>
                     <div>
                         <InputLabel htmlFor="name" value="Nim/No Telp" />
-
                         <TextInput
                             id="nim"
                             name="nim"
                             value={data.nim}
-                            className="mt-1 block w-full"
+                            className=" block w-full h-1/3"
                             autoComplete="nim"
                             isFocused={true}
                             onChange={(e) => setData("nim", e.target.value)}
@@ -58,14 +70,14 @@ export default function Register() {
 
                         <InputError message={errors.nim} className="mt-2" />
                     </div>
-                    <div>
+                    <div className="mt-1">
                         <InputLabel htmlFor="name" value="Name" />
 
                         <TextInput
                             id="name"
                             name="name"
                             value={data.name}
-                            className="mt-1 block w-full"
+                            className=" block w-full h-1/3 "
                             autoComplete="name"
                             isFocused={true}
                             onChange={(e) => setData("name", e.target.value)}
@@ -75,7 +87,7 @@ export default function Register() {
                         <InputError message={errors.name} className="mt-2" />
                     </div>
 
-                    <div className="mt-4">
+                    <div className="mt-1">
                         <InputLabel htmlFor="email" value="Email" />
 
                         <TextInput
@@ -83,7 +95,7 @@ export default function Register() {
                             type="email"
                             name="email"
                             value={data.email}
-                            className="mt-1 block w-full"
+                            className=" block w-full h-1/3"
                             autoComplete="username"
                             onChange={(e) => setData("email", e.target.value)}
                             required
@@ -92,7 +104,7 @@ export default function Register() {
                         <InputError message={errors.email} className="mt-2" />
                     </div>
 
-                    <div className="mt-4">
+                    <div className="mt-1">
                         <InputLabel htmlFor="password" value="Password" />
 
                         <TextInput
@@ -100,7 +112,7 @@ export default function Register() {
                             type="password"
                             name="password"
                             value={data.password}
-                            className="mt-1 block w-full"
+                            className=" block w-full h-1/3"
                             autoComplete="new-password"
                             onChange={(e) =>
                                 setData("password", e.target.value)
@@ -114,7 +126,7 @@ export default function Register() {
                         />
                     </div>
 
-                    <div className="mt-4">
+                    <div className="mt-1">
                         <InputLabel
                             htmlFor="password_confirmation"
                             value="Confirm Password"
@@ -125,7 +137,7 @@ export default function Register() {
                             type="password"
                             name="password_confirmation"
                             value={data.password_confirmation}
-                            className="mt-1 block w-full"
+                            className=" block w-full h-1/3"
                             autoComplete="new-password"
                             onChange={(e) =>
                                 setData("password_confirmation", e.target.value)
@@ -138,15 +150,15 @@ export default function Register() {
                             className="mt-2"
                         />
                     </div>
-                    <div className="mt-4">
-                        <label htmlFor="role" className="block text-gray-700">
+                    <div className="mt-1">
+                        <label htmlFor="role" className="block text-gray-700 h-1/3">
                             Role:
                         </label>
                         <select
                             id="role"
                             value={data.role}
                             onChange={(e) => setData("role", e.target.value)}
-                            className="mt-1 block w-full"
+                            className=" block w-full h-1/3"
                         >
                             <option value="" disabled>
                                 Select a role
@@ -173,6 +185,7 @@ export default function Register() {
                     </div>
                 </form>{" "}
             </div>
+        </motion.div>
         </div>
     );
 }

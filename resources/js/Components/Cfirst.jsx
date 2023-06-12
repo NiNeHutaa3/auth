@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image1 from "@/Images/company1.png";
 import Image2 from "@/Images/company2.png";
-import { Link } from "react-router-dom";
+import { Link } from "@inertiajs/react";
 
 const Cfirst = () => {
     const settings = {
@@ -41,7 +41,7 @@ const Cfirst = () => {
       <div className="container mx-auto">
         <div className="flex flex-col items-center">
           <h1 className="text-4xl font-bold mb-10">Company</h1>
-          <Link className="text-blue-500 underline font-medium hover:text-blue-700" to="/Company">
+          <Link href={route("company")} className="text-blue-500 underline font-medium hover:text-blue-700">
             SEE ALL
           </Link>
         </div>

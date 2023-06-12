@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
+import { Link } from "@inertiajs/react";
 import Image1 from "@/Images/talent1.png";
 import Image2 from "@/Images/talent2.png";
 import Image3 from "@/Images/talent3.png";
@@ -42,7 +42,7 @@ const Tfirst = () => {
       <div className="container mx-auto">
         <div className="flex flex-col items-center">
           <h1 className="text-4xl font-bold mb-10">Talent</h1>
-          <Link to="Company" className="text-blue-500 underline font-medium hover:text-blue-700" href="/Talent">
+          <Link href={route("talent")} className="text-blue-500 underline font-medium hover:text-blue-700">
             SEE ALL
           </Link>
         </div>

@@ -7,7 +7,7 @@ import Image from "@/Images/Rectangle 5.png";
 import {FaArrowLeft,FaArrowRight} from 'react-icons/fa'
 import { motion } from "framer-motion";
 import {BsArrowRight} from 'react-icons/bs'
-import { Link } from "react-router-dom";
+import { Link } from "@inertiajs/react";
 
 const Vfirst = () => {
     const [vacancies, setVacancies] = useState([
@@ -85,7 +85,7 @@ const Vfirst = () => {
         <div className="">
           <div className="flex flex-col items-center mb-8">
             <h1 className="text-4xl font-bold mb-10">Vacancy</h1>
-            <Link className="text-blue-500 underline font-medium hover:text-blue-700" to="/Vacancy">
+            <Link href={route("vacancy")}  className="text-blue-500 underline font-medium hover:text-blue-700" to="/Vacancy">
               SEE ALL
             </Link>
           </div>
@@ -109,10 +109,10 @@ const Vfirst = () => {
                   <p className="text-gray-600 text-center mb-4">{vacancy.description}</p>
                   <div className="text-center">
                     <a className="text-blue-500 text-center font-medium hover:text-blue-700" href={vacancy.link}>
-                      <span className="flex items-center justify-center">
+                      <Link href="vacancy" className="flex items-center justify-center">
                         READ ME
                         <BsArrowRight className="ml-2" />
-                      </span>
+                      </Link>
                     </a>
                   </div>
                 </div>

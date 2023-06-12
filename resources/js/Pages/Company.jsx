@@ -4,6 +4,7 @@ import Logo from "@/Images/perta.png";
 import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
 import { Link } from "react-router-dom";
 import {  motion } from "framer-motion";
+import Navbar from "@/Components/Navbar";
 
 const Company = () => {
     const cardData = [
@@ -66,6 +67,7 @@ const Company = () => {
   
   return (
     <BrowserRouter basename="/company">
+      <Navbar />
        <section className="section relative flex p-3 h-screen h-full" >
       <div className="w-1/4">
         <motion.div 
@@ -123,7 +125,7 @@ const Company = () => {
             </select>
           </motion.div>
             <div className="flex justify-center">
-              <button href="#" className="inline-flex items-center px-8 py-0.5 text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600 md:px-12 md:py-3 lg:px-28 lg:py-0 mx-auto transition duration-500 transform hover:scale-105">Search</button>
+              <button href="#" className="inline-flex items-center px-5 py-0.5 text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600 md:px-12 md:py-3 lg:px-28 lg:py-0 mx-auto transition duration-500 transform hover:scale-105">Search</button>
             </div>
         </motion.div>  
       </div>
@@ -154,7 +156,7 @@ const Company = () => {
           </motion.div>
         ))}
       </div>
-      <div className="absolute flex bg-white rounded-lg justify-center lg:right-1/4 lg:left-1/3 left-28 top-full lg:ml-20">
+      <div className="absolute flex bg-white rounded-lg justify-center bottom-5 lg:right-1/4 lg:left-1/3 left-28 lg:top-[1000px] top-[1900px] lg:ml-20">
             <button onClick={Back} className="h-12 border-2 border-r-0 border-blue-600 px-4 rounded-l-lg hover:bg-blue-600 hover:text-white">
               <AiOutlineLeft />
             </button>

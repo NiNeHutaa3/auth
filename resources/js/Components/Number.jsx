@@ -32,7 +32,7 @@ const Number = () => {
   
         interval3 = setInterval(() => {
           setCount3((prevCount) =>
-            prevCount >= 6441 ? prevCount : prevCount + 1
+            prevCount >= 644 ? prevCount : prevCount + 1
           );
         }, 0.01);
       }
